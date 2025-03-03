@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "homework1": {
+    "homework2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/homework1",
+            "outputPath": "dist/homework2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "homework1:build:production"
+              "buildTarget": "homework2:build:production"
             },
             "development": {
-              "buildTarget": "homework1:build:development"
+              "buildTarget": "homework2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,8 +98,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
