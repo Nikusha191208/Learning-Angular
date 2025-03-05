@@ -1,2 +1,2 @@
 # Learning Angular
-## Learning Angular in IT STEP ACADEMY!
+Learning Angular in IT STEP ACADEMY!
