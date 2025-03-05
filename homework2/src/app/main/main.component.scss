@@ -1,189 +1,68 @@
-.main {
+.advice-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
+  font-family: "Manrope", sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 90%;
-
-  .card {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 280px;
-    width: 480px;
-    border-radius: 25px;
-    background: lightgrey;
-    overflow: hidden;
-    transition: 100ms ease;
-    box-shadow: rgba(0, 0, 0, 0.15) 2px 3px 4px;
+  text-align: center;
+  width: 420px;
+  height: auto;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 10px;
+  padding: 40px 26px 40px 26px;
 
 
-    .info-section {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      height: 75%;
-      color: white;
-    }
-
-    .left-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 100%;
-      z-index: 1;
-      padding-left: 18px;
-    }
-
-    button {
-      display: block;
-      border: none;
-      background: transparent;
-    }
-
-    .weather {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 5px;
-    }
-
-    .weather div {
-      display: flex;
-      align-items: center;
-    }
-
-    .weather div:nth-child(1) {
-      width: 40%;
-      height: auto;
-    }
-
-    .temperature {
-      font-size: 34pt;
-      font-weight: 500;
-      line-height: 8%;
-    }
-
-    .right-side {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-around;
-      height: 100%;
-      padding-right: 18px;
-      z-index: 1;
-    }
-
-    .right-side > div {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
-    .date {
-      font-size: 20px;
-    }
-
-    .hour {
-      font-size: 28px;
-      line-height: 1em;
-    }
-
-    .city {
-      font-size: 24px;
-    }
-
-    /* ---------- Background ---------- */
-    .background-design {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: #ec7263;
-      overflow: hidden;
-    }
-
-    .circle {
-      background-color: #efc745;
-    }
-
-    .circle:nth-child(1) {
-      position: absolute;
-      top: -80%;
-      right: -50%;
-      width: 300px;
-      height: 300px;
-      opacity: 0.4;
-      border-radius: 50%;
-    }
-
-    .circle:nth-child(2) {
-      position: absolute;
-      top: -70%;
-      right: -30%;
-      width: 210px;
-      height: 210px;
-      opacity: 0.4;
-      border-radius: 50%;
-    }
-
-    .circle:nth-child(3) {
-      position: absolute;
-      top: -35%;
-      right: -8%;
-      width: 100px;
-      height: 100px;
-      opacity: 1;
-      border-radius: 50%;
-    }
-
-    /* ---------- Days section ---------- */
-    .days-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      height: 25%;
-      background-color: #974859;
-      gap: 2px;
-      box-shadow: inset 0px 2px 5px #974859;
-
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        background-color: #a75265;
-        box-shadow: inset 0px 2px 5px #974859;
-        cursor: pointer;
-        transition: 100ms ease;
-        gap: 5px;
-
-        &:hover {
-          scale: 0.9;
-          border-radius: 10px;
-        }
-
-      }
-
-      .day {
-        font-size: 10pt;
-        font-weight: 500;
-        color: white;
-        opacity: 0.7;
-      }
-    }
-
-    .icon-weather-day {
-      display: flex;
-      align-items: center;
-      width: 20px;
-      height: 100%;
-    }
-
+  .paragraph {
+    font-size: 17px;
+    background-image: linear-gradient(to right, hsl(150, 100%, 66%),#C031B5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 
+  .advice-details {
+    color: hsl(193, 38%, 86%);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px 0;
+    line-height: 25px;
+    text-wrap: balance;
+    letter-spacing: 1px;
+  }
+
+  .pattern-divider path {
+    fill: hsl(217, 19%, 38%);
+  }
+
+  button {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: none;
+    background: #00e673;
+    margin-top: 20px;
+    margin-bottom: -25px;
+    cursor: pointer;
+    transition: 0.3s all
+  }
+
+  button:hover {
+    box-shadow: 0rem 0rem 10px 10px rgba(82, 255, 168, 0.5);
+  }
 }
+
+
+
+
+
+
+
+
+
+

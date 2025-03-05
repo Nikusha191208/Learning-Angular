@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  title = 'Weather'
-  githubText = 'View me on Github'
+  mainTitle = "Random Number Generator"
+  githubTitle = "My Github"
 }

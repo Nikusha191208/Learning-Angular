@@ -12,5 +12,5 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'homework2';
+  lightMode = true
 }
