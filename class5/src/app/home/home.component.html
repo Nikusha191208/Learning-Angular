@@ -1,0 +1,27 @@
+<button (click)="showData()">Show Data Of Users</button>
+<button (click)="showProductsData()">Show Products</button>
+
+<h1 *ngIf="showUsers">Users</h1>
+<div class="cont" *ngIf="showUsers">
+
+    <div class="box" *ngFor="let user of users">
+        <img [src]="user.avatar">
+        <div class="names">
+            <h2>{{user.first_name}}</h2>
+            <h2>{{user.last_name}}</h2>
+        </div>
+        <p>{{user.email}}</p>
+    </div>
+
+</div>
+
+<h1 *ngIf="showProducts">Products</h1>
+<div class="productsCont" *ngIf="showProducts">
+    <div class="productsBox" *ngFor="let product of products">
+        <img [src]="product.image">
+        <h2>{{product.title}}</h2>
+        <h2>{{product.category}}</h2>
+        <h2>{{product.price}}</h2>
+        <p>{{product.description}}</p>
+    </div>
+</div>

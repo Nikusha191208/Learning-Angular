@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+}
+
+.cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .box {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.productsCont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .productsBox{
+        width: 200px;
+        padding: 10px;
+        border: 1px solid black;
+
+        img {
+            width: 100%;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+}
