@@ -1,0 +1,58 @@
+<section>
+  <form class="form" (submit) = "showCard()" [style.display] = "!cardDisplay ? 'flex' : 'none'">
+    <p class="title">Register </p>
+    <p class="message">Please fill this form!</p>
+    <div class="flex">
+      <label>
+        <input class="input" type="text" placeholder="" required
+        [(ngModel)] = "firstName"
+        [ngModelOptions]="{standalone: true}">
+        <span>{{placeholder1}}</span>
+      </label>
+
+      <label>
+        <input class="input" type="text" placeholder="" required
+        [(ngModel)] = "lastName"
+        [ngModelOptions]="{standalone: true}">
+        <span>{{placeholder2}}</span>
+      </label>
+    </div>
+
+
+    <label>
+      <input class="input" type="email" placeholder="" required
+        [(ngModel)] = "gmail"
+        [ngModelOptions]="{standalone: true}">
+      <span>{{placeholder3}}</span>
+    </label>
+    <label>
+      <input class="input" type="number" placeholder="" required
+        [(ngModel)] = "contact"
+        [ngModelOptions]="{standalone: true}">
+      <span>{{placeholder4}}</span>
+    </label>
+    <label>
+      <input class="input" type="password" placeholder="" required
+        [(ngModel)] = "password"
+        [ngModelOptions]="{standalone: true}">
+      <span>{{placeholder5}}</span>
+    </label>
+    <button class="submit" type="submit">Submit</button>
+  </form>
+
+<div class="card" [style.display] = "cardDisplay ? 'flex' : 'none'">
+  <div class="imgBox">
+      <svg viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" fill-rule="evenodd"></path>
+      </svg>
+  </div>
+  <div class="name">
+      <p class="p1">Firstname: {{firstName}}</p>
+      <p class="p1">Lastname: {{lastName}}</p>
+      <p class="p1">Gmail: {{gmail}}</p>
+      <p class="p1">Tel Number:{{contact}}</p>
+  </div>
+</div>
+
+</section>

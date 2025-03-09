@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  copyrightTitle = 'Random Quote Generator'
   author = 'Nikoloz Lortkipanidze'
+  description = 'Fill The Form and Create Your Own Card!'
 }
