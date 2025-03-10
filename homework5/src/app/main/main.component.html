@@ -1,0 +1,42 @@
+<div class="buttons">
+  <button (click) = 'toggleUsers()'>Show Users</button>
+  <button (click) = 'toggleProducts()'>Show Products</button>
+</div>
+
+<table *ngIf="showUsers">
+  <thead>
+    <tr>
+      <td>Avatar</td>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Email</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of users">
+    <tr>
+      <img [src]="user.avatar">
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table *ngIf="showProducts">
+  <thead>
+    <tr>
+      <td>Image</td>
+      <td>Title</td>
+      <td>Category</td>
+      <td>Prize</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products">
+    <tr>
+      <img [src]="product.image">
+      <td>{{product.title}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+  </tbody>
+</table>
