@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class MainComponent {
 
+  showUsersBTN = "Show Users"
+  showProductsBTN = "Show Products"
+
   showUsers = false;
   showProducts = false;
 
