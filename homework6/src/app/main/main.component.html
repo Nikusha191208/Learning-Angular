@@ -1,0 +1,63 @@
+<form class="form">
+    <p class="title">Form</p>
+    <p class="message">Please fill the form!</p>
+    <div class="flex">
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+             [(ngModel)]="student.name"
+             [ngModelOptions]="{standalone: true}">
+            <span>Name</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="number" class="input"
+            [(ngModel)]="student.age"
+            [ngModelOptions]="{standalone: true}">
+            <span>Age</span>
+        </label>
+    </div>
+
+    <label>
+        <input required="" placeholder="" type="number" class="input"
+        [(ngModel)]="student.grade"
+        [ngModelOptions]="{standalone: true}">
+        <span>Grade</span>
+    </label>
+
+    <label>
+        <input required="" placeholder="" type="text" class="input"
+        [(ngModel)]="student.subjects"
+        [ngModelOptions]="{standalone: true}">
+        <span>Subjects</span>
+    </label>
+    <div class="cntr">
+        <h1>Is Enrolled: </h1>
+        <input checked="" type="checkbox" id="cbx" class="hidden-xs-up"
+        [(ngModel)]="student.isEnrolled"
+        [ngModelOptions]="{standalone: true}">
+        <label for="cbx" class="cbx"></label>
+    </div>
+    <div class="flex">
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+            [(ngModel)]="student.address.street"
+            [ngModelOptions]="{standalone: true}">
+            <span>Street</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+            [(ngModel)]="student.address.city"
+            [ngModelOptions]="{standalone: true}">
+            <span>City</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+            [(ngModel)]="student.address.zip"
+            [ngModelOptions]="{standalone: true}">
+            <span>Zip</span>
+        </label>
+    </div>
+    <button type="button" (click)="showData()">Submit</button>
+</form>
