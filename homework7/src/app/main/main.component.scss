@@ -1,0 +1,349 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$error-color: #e74c3c;
+$text-color: #333;
+$border-color: #ddd;
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+$border-radius: 4px;
+
+.student-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  h3 {
+    color: $text-color;
+    font-size: 1.1rem;
+    margin: 20px 0 15px;
+  }
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+
+      &:invalid {
+        border-color: $error-color;
+      }
+    }
+  }
+
+  .checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: $primary-color;
+    }
+  }
+
+  .address-container {
+    background-color: rgba($border-color, 0.2);
+    padding: 15px;
+    border-radius: $border-radius;
+    margin: 10px 0;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s;
+
+      &.btn-submit {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+
+      &.btn-reset {
+        background-color: #f8f9fa;
+        color: $text-color;
+        border: 1px solid $border-color;
+
+        &:hover {
+          background-color: darken(#f8f9fa, 5%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .student-form-container {
+    padding: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+$primary-color: #4a6fa5;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+.studentsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.student-card {
+  padding: 40px;
+  max-width: 350px;
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  &__header {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &__status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: $secondary-color;
+
+    &.active {
+      background-color: $success-color;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__name {
+    margin: 0 0 15px 0;
+    color: $dark-color;
+    font-size: 1.5rem;
+  }
+
+  &__info-row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      font-size: 0.8rem;
+      color: $secondary-color;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .value {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $dark-color;
+    }
+  }
+
+  &__section {
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+  }
+
+  &__subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .subject-tag {
+      padding: 5px 10px;
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    line-height: 1.4;
+    color: $dark-color;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__footer {
+    padding: 15px 20px;
+    border-top: 1px solid rgba($secondary-color, 0.2);
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border: none;
+
+      &.btn-edit {
+        background-color: white;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+
+        &:hover {
+          background-color: rgba($primary-color, 0.05);
+        }
+      }
+
+      &.btn-view {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+
+  .student-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+
+}
+
+.checkboxDiv {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+// Add responsive styles
+@media (max-width: 400px) {
+  .student-card {
+    max-width: 100%;
+
+    &__footer {
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+<div class="student-form-container">
+  <h2>Student Information</h2>
+
+  <form class="student-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Enter student name" [(ngModel)]="student.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" placeholder="Enter age" [(ngModel)]="student.age" name="age">
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Grade</label>
+      <input type="number" placeholder="Enter grade" [(ngModel)]="student.grade" name="grade">
+    </div>
+
+    <div class="form-group">
+      <label for="subjects">Subjects</label>
+      <input type="text" placeholder="Enter subjects (comma separated)" [(ngModel)]="student.subjects" name="subjects">
+    </div>
+
+    <div class="form-group checkbox-group">
+      <input type="checkbox" [(ngModel)]="student.isEnrolled" name="isEnrolled">
+      <label for="isEnrolled">Currently Enrolled</label>
+    </div>
+
+    <div class="address-container">
+      <h3>Address Information</h3>
+
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" placeholder="Enter street address" [(ngModel)]="student.address.street" name="street">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" placeholder="Enter city" [(ngModel)]="student.address.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="zip">ZIP Code</label>
+        <input type="number" placeholder="Enter ZIP code" [(ngModel)]="student.address.zip" name="zip">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-submit" (click)="addCard()">Submit</button>
+      <button type="button" class="btn-clear" (click)="clear()">Clear</button>
+      <button type="button" class="btn-clear" (click)="removeChecked()">Remove Checked</button>
+    </div>
+  </form>
+</div>
+
+<div class="studentsDiv" *ngFor="let student of students; let index=index">
+  <div class="student-card">
+    <div class="student-card__content">
+      <h2 class="student-card__name">{{student.name}}</h2>
+
+      <div class="student-card__info-row">
+        <div class="student-card__info-item">
+          <span class="label">Age</span>
+          <span class="value">{{student.age}}</span>
+        </div>
+        <div class="student-card__info-item">
+          <span class="label">Grade</span>
+          <span class="value">{{student.grade}}</span>
+        </div>
+      </div>
+
+      <div class="student-card__section">
+        <h3>Subjects</h3>
+        <div class="student-card__subjects">
+          <span class="subject-tag">{{student.subjects}}</span>
+        </div>
+      </div>
+
+      <div class="student-card__section">
+        <h3>Address</h3>
+        <address class="student-card__address">
+          <p>{{student.address.city}}</p>
+          <p>{{student.address.street}}</p>
+          <p>{{student.address.zip}}</p>
+        </address>
+        
+      </div>
+      
+    </div>
+
+    <div class="student-card__footer">
+      <button class="btn-edit" (click)="editCard(index)">Edit Profile</button>
+      <button class="btn-edit" (click)="removeCard(index)">Remove Profile</button>
+      <div class="checkboxDiv">
+        <p>Check For Delete</p>
+        <input type="checkbox" [(ngModel)]="student.checked">
+      </div>
+    </div>
+  </div>
+</div>
