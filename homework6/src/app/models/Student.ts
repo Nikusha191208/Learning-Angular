@@ -1,12 +1,12 @@
 export interface Student {
-    name:string
-    age:number
-    grade:number
-    subjects:string
-    isEnrolled:boolean
+    name:string,
+    age:number | null,
+    grade:number | null,
+    subjects:string,
+    isEnrolled:boolean,
     address: {
-        street: '',
-        city: '',
-        zip: ''
+        street:string,
+        city:string,
+        zip:string
     }
-}
+};

@@ -1,63 +1,92 @@
-<form class="form">
-    <p class="title">Form</p>
-    <p class="message">Please fill the form!</p>
-    <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input"
-             [(ngModel)]="student.name"
-             [ngModelOptions]="{standalone: true}">
-            <span>Name</span>
-        </label>
+<div class="student-form-container">
+  <h2>Student Information</h2>
 
-        <label>
-            <input required="" placeholder="" type="number" class="input"
-            [(ngModel)]="student.age"
-            [ngModelOptions]="{standalone: true}">
-            <span>Age</span>
-        </label>
+  <form class="student-form" (ngSubmit)="addCard()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Enter student name" [(ngModel)]="student.name" name="name">
     </div>
 
-    <label>
-        <input required="" placeholder="" type="number" class="input"
-        [(ngModel)]="student.grade"
-        [ngModelOptions]="{standalone: true}">
-        <span>Grade</span>
-    </label>
-
-    <label>
-        <input required="" placeholder="" type="text" class="input"
-        [(ngModel)]="student.subjects"
-        [ngModelOptions]="{standalone: true}">
-        <span>Subjects</span>
-    </label>
-    <div class="cntr">
-        <h1>Is Enrolled: </h1>
-        <input checked="" type="checkbox" id="cbx" class="hidden-xs-up"
-        [(ngModel)]="student.isEnrolled"
-        [ngModelOptions]="{standalone: true}">
-        <label for="cbx" class="cbx"></label>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" placeholder="Enter age" [(ngModel)]="student.age" name="age">
     </div>
-    <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input"
-            [(ngModel)]="student.address.street"
-            [ngModelOptions]="{standalone: true}">
-            <span>Street</span>
-        </label>
 
-        <label>
-            <input required="" placeholder="" type="text" class="input"
-            [(ngModel)]="student.address.city"
-            [ngModelOptions]="{standalone: true}">
-            <span>City</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="text" class="input"
-            [(ngModel)]="student.address.zip"
-            [ngModelOptions]="{standalone: true}">
-            <span>Zip</span>
-        </label>
+    <div class="form-group">
+      <label for="grade">Grade</label>
+      <input type="number" placeholder="Enter grade" [(ngModel)]="student.grade" name="grade">
     </div>
-    <button type="button" (click)="showData()">Submit</button>
-</form>
+
+    <div class="form-group">
+      <label for="subjects">Subjects</label>
+      <input type="text" placeholder="Enter subjects (comma separated)" [(ngModel)]="student.subjects" name="subjects">
+    </div>
+
+    <div class="form-group checkbox-group">
+      <input type="checkbox" [(ngModel)]="student.isEnrolled" name="isEnrolled">
+      <label for="isEnrolled">Currently Enrolled</label>
+    </div>
+
+    <div class="address-container">
+      <h3>Address Information</h3>
+
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" placeholder="Enter street address" [(ngModel)]="student.address.street" name="street">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" placeholder="Enter city" [(ngModel)]="student.address.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="zip">ZIP Code</label>
+        <input type="number" placeholder="Enter ZIP code" [(ngModel)]="student.address.zip" name="zip">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div class="studentsDiv">
+  <div class="student-card" *ngFor="let student of students">
+    <div class="student-card__content">
+      <h2 class="student-card__name">{{student.name}}</h2>
+
+      <div class="student-card__info-row">
+        <div class="student-card__info-item">
+          <span class="label">Age</span>
+          <span class="value">{{student.age}}</span>
+        </div>
+        <div class="student-card__info-item">
+          <span class="label">Grade</span>
+          <span class="value">{{student.grade}}</span>
+        </div>
+      </div>
+
+      <div class="student-card__section">
+        <h3>Subjects</h3>
+        <div class="student-card__subjects">
+          <span class="subject-tag">{{student.subjects}}</span>
+        </div>
+      </div>
+
+      <div class="student-card__section">
+        <h3>Address</h3>
+        <address class="student-card__address">
+          <p>{{student.address.city}}</p>
+          <p>{{student.address.street}}</p>
+          <p>{{student.address.zip}}</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="student-card__footer">
+      <button class="btn-edit">Edit Profile</button>
+    </div>
+  </div>
+</div>
